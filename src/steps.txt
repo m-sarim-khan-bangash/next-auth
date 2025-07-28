@@ -1,0 +1,15 @@
+first install next auth => npm i next-auth
+go to github => githcom.com/settings/developers create
+register 0auth app
+run command npx auth secret
+create .env.local file
+add NEXTAUTH_SECRET to .env.local file
+copy client id and secret to .env.local file
+go to src/app/api/auth/[...nextauth]/route.js
+add import { handlers } from "@/auth";
+export const { GET, POST } = handlers;
+go to next.config.mjs
+add images: { domains: ["avatars.githubusercontent.com"] }
+go to src/app/page.js   
+add import { auth } from "next-auth";
+const session = await auth();
