@@ -3,7 +3,7 @@ go to github => githcom.com/settings/developers create
 register 0auth app
 run command npx auth secret
 create .env.local file
-add NEXTAUTH_SECRET to .env.local file
+add AUTH_SECRET to .env.local file => npx auth secret to generate AuthSecret
 copy client id and secret to .env.local file
 go to src/app/api/auth/[...nextauth]/route.js
 add import { handlers } from "@/auth";
@@ -13,3 +13,13 @@ add images: { domains: ["avatars.githubusercontent.com"] }
 go to src/app/page.js   
 add import { auth } from "next-auth";
 const session = await auth();
+
+
+/api/auth/
+Ye NextAuth ka base route hai.
+
+callback/
+Ye path batata hai ke ye ek OAuth callback hai.
+
+github
+Ye OAuth provider ka naam hai (GitHub, Google, etc.)
