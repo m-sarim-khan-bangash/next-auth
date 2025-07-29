@@ -6,6 +6,7 @@ import SignOutButton from "@/components/SignOutButton";
 
 export default async function Home() {
   const session = await auth();
+  console.log("Session:", session);
 
   if (session?.user) {
     return (
